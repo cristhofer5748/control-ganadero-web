@@ -1,0 +1,144 @@
+.example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    text-align: center;
+    border: none;
+    background-color: #64AC3F;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.list-group-item {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.form-control {
+    min-width: 196px;
+    background-color: #0000001e;
+}
+
+.btn {
+    background-color: #64AC3F;
+    border: none;
+    margin-left: 5%;
+    min-width: 159px;
+}
+
+.titleData {
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 20%;
+}
+
+.data {
+    font-size: 16px;
+    margin-right: 30%;
+}
+
+.label {
+    text-align: right;
+}
+
+.grupo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    text-align: left;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.descripcion {
+    font-weight: bold;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.menu {
+    justify-content: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+}
+
+@media screen and (max-width:480px) and (min-width:200px) {
+    /* smartphones, Android phones, landscape iPhone */
+    .menu {
+        justify-content: center;
+        text-align: center;
+    }
+    .titleData {
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 20%;
+    }
+    .data {
+        font-size: 18px;
+        margin-right: 30%;
+    }
+}
+
+@media screen and (max-width:600px) and (min-width:480px) {
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+}
+
+@media screen and (max-width:801px) and (min-width:600px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+@media screen and (max-width:1200px) and (min-width:801px) {
+    /* big landscape tablets, laptops, and desktops */
+}

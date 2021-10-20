@@ -1,0 +1,212 @@
+.contenedor-login {
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%
+}
+
+.encabezado-login {
+    width: auto;
+    height: 100px;
+}
+
+.login {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    bottom: 0;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.selectores {
+    margin-top: 20px;
+}
+
+.form-switch {
+    display: flex;
+    padding: 0px;
+}
+
+.label-switch {
+    margin-left: 5%;
+}
+
+.form-check-label {
+    margin-right: 5%;
+}
+
+.form-check-input {
+    margin-top: 10px;
+}
+
+.checkbox {
+    margin-left: 13px;
+}
+
+.crias {
+    margin-left: 90px;
+}
+
+.sel {
+    display: flex;
+}
+
+.form-check-inline {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    text-align: center;
+    margin-left: -30px;
+}
+
+.figure-caption {
+    color: white;
+    font-size: 14px;
+}
+
+.title {
+    font-weight: bold;
+    margin: 0%;
+    padding-top: 37px;
+    font-size: 30px;
+    color: white;
+}
+
+.descripcion {
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.container {
+    top: 20px;
+    width: 80%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.btn {
+    margin-top: 2%;
+    margin-bottom: 10%;
+}
+
+.btn-1 {
+    background-color: #0066FF;
+    color: white;
+    border: 1px solid white;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.btn-2 {
+    background-color: #0066FF;
+    color: white;
+    border: 1px solid white;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+label {
+    color: white;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    font-weight: lighter;
+}
+
+#fichero {
+    display: none;
+}
+
+.circle {
+    display: inline-block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    img {
+        width: 70%;
+    }
+    .title {
+        margin: 0%;
+        font-size: 24px;
+    }
+    .descripcion {
+        color: #64AC3F;
+        font-size: 20px;
+        font-weight: lighter;
+    }
+    .login {
+        top: 45%;
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+    }
+}
+
+@media screen and (max-width:480px) and (min-width:200px) {
+    /* smartphones, Android phones, landscape iPhone */
+    .title {
+        margin: 0%;
+        font-size: 24px;
+    }
+    .descripcion {
+        color: white;
+        font-size: 14px;
+        font-weight: lighter;
+    }
+    .row {
+        margin-top: 15px;
+    }
+    label {
+        color: rgb(90, 90, 90)EA;
+        margin-bottom: 2%;
+        margin-top: 2%;
+    }
+    .figure {
+        margin-left: 0%;
+    }
+    .btn-1 {
+        margin-right: 5%;
+    }
+    .btn-2 {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width:600px) and (min-width:480px) {
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+}
+
+@media screen and (max-width:801px) and (min-width:600px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+@media screen and (max-width:1200px) and (min-width:801px) {
+    /* big landscape tablets, laptops, and desktops */
+}

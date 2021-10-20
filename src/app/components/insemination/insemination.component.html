@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="contenedor-login">
+    <div class="encabezado-login ">
+        <p for="" class="title">INSEMINACION</p>
+        <!-- <h1 for="" class="descripcion">Ingresa los datos correspondientes</h1> -->
+    </div>
+    <figure class="figure">
+        <img src="/assets/img/menunata.png" class="figure-img" alt="...">
+        <figcaption class="figure-caption text-end"> Nombre y Numero de Vaca</figcaption>
+    </figure>
+
+
+    <div class="login">
+        <form class="container">
+            <div class="form-group">
+                <label>Fecha de Inseminacion</label>
+                <input type="date" class="form-control" #fechaInseminacion>
+            </div>
+            <div class="form-group selectores">
+                <div class="form-check form-switch">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Sexado</label>
+                    <input class="form-check-input" type="checkbox" #sexado>
+                </div>
+
+                <div class="crias">
+                    <label class="form-check-label" for="inlineRadio1">Sexo Cria</label>
+                    <div class=sel>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Macho</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Hembra</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Monta Natural</label>
+                <input type="date" class="form-control" #fechaMonta>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Plantacion de Embrion</label>
+                <input type="date" class="form-control" #fechaPlantacion>
+            </div>
+            <div class="form-group">
+                <label>Raza de Inseminacion o Monta </label>
+                <input type="text" class="form-control" #Raza>
+            </div>
+
+            <div class="row">
+                <button (click)="guardar()" class=" col btn-1 btn btn-primary">Guardar</button>
+                <button (click)="cancelar()" class="col btn-2 btn btn-primary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

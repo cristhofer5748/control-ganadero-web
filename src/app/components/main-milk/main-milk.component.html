@@ -1,0 +1,75 @@
+<app-header></app-header>
+<div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
+
+<div class="menu">
+
+    <ul class="list-group ">
+        <li class="list-group-item active" aria-current="true">
+            <label class="title">Produccion De Leche</label>
+            <label class="description">Puede variar entre rango de fechas</label>
+        </li>
+        <li class="list-group-item ">
+            <div class="input-group" *ngIf="!isLoadingResults">
+                <div class="form-outline">
+                    <input #initDate type="date" placeholder="Fecha Inicial" class="textbox-n" type="text" onClick="(this.type='date')" class="form-control" />
+                    <input #endDate type="date" placeholder="Fecha Final" class="textbox-n" type="text" onClick="(this.type='date')" class="form-control" />
+                </div>
+                <button type="button" class="btn btn-primary">Buscar</button>
+            </div>
+        </li>
+        <li class="list-group-item grupo">
+            <label for="" class="titleData">Total del Dia: </label>
+            <div class="label">
+                <Label class="data">0</Label>
+            </div>
+        </li>
+        <li class="list-group-item grupo">
+            <label for="" class="titleData">Total de Ayer: </label>
+            <div class="label">
+                <Label class="data">0</Label>
+            </div>
+        </li>
+        <li class="list-group-item grupo">
+            <label for="" class="titleData">Total del Mes: </label>
+            <div class="label">
+                <Label class="data">0</Label>
+            </div>
+        </li>
+        <li class="list-group-item grupo">
+            <label for="" class="titleData">Primera quincena: </label>
+            <div class="label">
+                <Label class="data">0</Label>
+            </div>
+        </li>
+        <li class="list-group-item grupo">
+            <label for="" class="titleData">Consumo de Casa</label>
+            <div class="label">
+                <Label class="data">0</Label>
+            </div>
+        </li>
+        <li class="list-group-item grupo">
+            <label for="" class="titleData">Consumo Terneros</label>
+            <div class="label">
+                <Label class="data">0</Label>
+            </div>
+        </li>
+        <li class="list-group-item grupo">
+            <label for="" class="titleData">En ordeño</label>
+            <div class="label">
+                <Label class="data">0</Label>
+            </div>
+        </li>
+        <li class="list-group-item grupo">
+            <label for="" class="titleData">Promedio Diario</label>
+            <div class="label">
+                <Label class="data">0</Label>
+            </div>
+        </li>
+
+    </ul>
+    <button (click)='registrarLeche()' class="btn btn-primary">Nuevo Registro <img src="/assets/img/mas.png" alt=""></button>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
+
+<div class="menu">
+    <ul class="list-group ">
+        <li class="list-group-item active" aria-current="true">
+            <label class="title">Menu del Animal</label>
+            <label class="description">Elija una opcion para continuar</label>
+        </li>
+        <li class="list-group-item">
+            <img class="fluid" src="/assets/img/menuinse.png" alt="">
+            <button (click)="inseminacion()" class="btn btn-primary">Inseminacio</button>
+        </li>
+        <li class="list-group-item">
+            <img class="fluid" src="/assets/img/menusalud.png" alt="">
+            <button (click)="controlsalud()" class="btn btn-primary">Control de Salud</button>
+        </li>
+        <li class="list-group-item">
+            <img class="fluid" src="/assets/img/menunata.png" alt="">
+            <button (click)="natalidad()" class="btn btn-primary">Natalidad</button>
+        </li>
+    </ul>
+
+    <img class="vaca" *ngIf="img" [src]="img" alt="">
+
+</div>
+
+<app-footer></app-footer>

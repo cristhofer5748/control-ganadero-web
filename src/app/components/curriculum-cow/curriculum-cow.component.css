@@ -1,0 +1,97 @@
+table {
+    background: white;
+}
+
+.img-animal {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%
+}
+
+.animal {
+    display: inline-block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.input-group {
+    align-items: center;
+    justify-content: center;
+}
+
+.datosanimal {
+    display: grid;
+}
+
+.datosanimal label {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.input-group label {
+    color: white;
+    font-weight: bold;
+    margin-right: 2%;
+}
+
+.input-group {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.datosanimal p {
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    margin: 0%;
+}
+
+.header-datos-generales {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+
+.header-datos-generales img {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.row {
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+.btn-1 {
+    margin-right: 1%;
+}
+
+@media screen and (max-width: 320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+}
+
+@media screen and (max-width:480px) and (min-width:200px) {
+    /* smartphones, Android phones, landscape iPhone */
+    table {
+        display: block;
+        overflow-x: auto;
+        background: white;
+    }
+}

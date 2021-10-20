@@ -1,0 +1,15 @@
+.navbar {
+    background-color: #663300;
+}
+
+.hamburgueza {
+    width: 25px;
+    height: 5px;
+    background-color: white;
+    margin: 4px;
+    border-radius: 5%;
+}
+
+h1 {
+    color: white;
+}

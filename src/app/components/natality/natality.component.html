@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="contenedor-login">
+    <div class="encabezado-login ">
+        <p for="" class="title">NATALIDAD</p>
+        <!-- <h1 for="" class="descripcion">Ingresa los datos correspondientes</h1> -->
+    </div>
+    <figure class="figure">
+        <img src="/assets/img/menunata.png" class="figure-img" alt="...">
+        <figcaption class="figure-caption text-end"> Nombre y Numero de Vaca</figcaption>
+    </figure>
+
+
+    <div class="login">
+        <form class="container">
+            <div class="form-group">
+                <label>Fecha de Palpacion</label>
+                <input type="date" class="form-control" #fechaPalpa>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Premies</label>
+                <input type="date" class="form-control" #fechaPremies>
+            </div>
+            <div class="form-group">
+                <label>Fecha estimada a parir</label>
+                <input type="date" class="form-control" #fechaPremies>
+            </div>
+            <div class="form-group">
+                <label>Numero de Parto</label>
+                <input type="text" class="form-control" #Parto>
+            </div>
+            <div class="form-group">
+                <label>Produccion Lechera</label>
+                <input type="text" class="form-control" #ProduccionLechera>
+            </div>
+            <div class="row">
+                <button (click)="guardar(fechaPalpa.value,fechaPremies.value,fechaPremies.value,Parto.value,ProduccionLechera.value)" class=" col btn-1 btn btn-primary">Guardar</button>
+                <button (click)="cancelar()" class="col btn-2 btn btn-primary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

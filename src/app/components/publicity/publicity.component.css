@@ -1,0 +1,90 @@
+.footer {
+    background-color: #663300;
+    width: 100%;
+    position: absolute;
+    top: 90%;
+    bottom: 0;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.btn {
+    height: 40px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: none;
+    width: 150px;
+}
+
+.btnregistrar {
+    margin-left: 40px;
+}
+
+.contenedor {
+    padding: 0%;
+    background-color: #64AC3F;
+}
+
+.carousel-item {
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-indicators {
+    bottom: 5%;
+}
+
+.carousel-caption {
+    bottom: 10%;
+}
+
+.imagenPublicidad {
+    width: 35%;
+    margin-bottom: 0%;
+}
+
+@media screen and (max-width:320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .imagenPublicidad {
+        width: 95%;
+        margin-bottom: 25%;
+    }
+}
+
+@media screen and (max-width:480px) and (min-width:320px) {
+    /* smartphones, Android phones, landscape iPhone */
+    .imagenPublicidad {
+        width: 95%;
+        margin-bottom: 25%;
+    }
+}
+
+@media screen and (max-width:600px) and (min-width:480px) {
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    .imagenPublicidad {
+        width: 90%;
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (max-width:801px) and (min-width:600px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .imagenPublicidad {
+        width: 70%;
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width:1025px) and (min-width:801px) {
+    /* big landscape tablets, laptops, and desktops */
+    .imagenPublicidad {
+        width: 50%;
+        margin-bottom: 0%;
+    }
+}
