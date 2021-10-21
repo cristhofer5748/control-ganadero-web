@@ -13,7 +13,7 @@
 <div class="example-container mat-elevation-z8">
 
 
-    <div class="example-table-container" *ngIf="!isLoadingResults">
+    <div class="example-table-container" *ngIf="!isLoadingResults && ganado.length>0">
 
         <table mat-table [dataSource]="dataSource" class="example-table" matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
             <!-- Number Column -->
@@ -39,6 +39,11 @@
         </table>
     </div>
 
-    <!-- <mat-paginator *ngIf="!isLoadingResults" [length]="resultsLength" [pageSize]="5" aria-label="Select page of GitHub search results"></mat-paginator> -->
+    <div *ngIf="ganado.length==0" class="alert alert-warning " role="alert ">
+        No tiene ganado registrado
+    </div>
+
+
+    <!-- <mat-paginator *ngIf="!isLoadingResults " [length]="resultsLength " [pageSize]="5 " aria-label="Select page of GitHub search results "></mat-paginator> -->
 </div>
 <app-footer></app-footer>

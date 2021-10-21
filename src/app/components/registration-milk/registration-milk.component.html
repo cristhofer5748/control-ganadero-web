@@ -1,4 +1,8 @@
 <app-header></app-header>
+<div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
+
 <div class="contenedor-login">
     <img src="/assets/img/botella.png" alt="">
     <div class="login">
@@ -9,18 +13,18 @@
             </div>
             <div class="form-group">
                 <label for="email">Total de Produccion</label>
-                <input type="text" class="form-control" id="correo" #correo>
+                <input type="number" class="form-control" id="correo" #produccion>
             </div>
             <div class="form-group">
                 <label for="email">Consumo en Casa</label>
-                <input type="text" class="form-control" id="correo" #correo>
+                <input type="number" class="form-control" id="correo" #consumoCasa>
             </div>
             <div class="form-group">
                 <label for="password">Consumo Ternero</label>
-                <input type="password" class="form-control" id="contrasena" #contrasena>
+                <input type="number" class="form-control" id="contrasena" #consumoTernero>
             </div>
             <div class="row">
-                <button class="col btn-1 btn btn-primary">Guardar</button>
+                <button (click)="guardarRegistro(produccion.value,consumoCasa.value,consumoTernero.value)" class="col btn-1 btn btn-primary">Guardar</button>
                 <button class="col btn-2 btn btn-primary">Cancelar</button>
             </div>
 

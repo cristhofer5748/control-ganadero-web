@@ -34,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FilterPipe } from './pipes/filter.pipe';
 import { ListadohojaComponent } from './components/listadohoja/listadohoja.component';
-import { DialogImgComponent } from './components/curriculum-cow/dialog-img/dialog-img.component'
+import { DialogImgComponent } from './components/curriculum-cow/dialog-img/dialog-img.component';
+import { EditarAnimalComponent } from './components/editar-animal/editar-animal.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { DialogImgComponent } from './components/curriculum-cow/dialog-img/dialo
     FooterComponent,
     FilterPipe,
     ListadohojaComponent,
-    DialogImgComponent
+    DialogImgComponent,
+    EditarAnimalComponent
   ],
   imports: [
     BrowserModule,

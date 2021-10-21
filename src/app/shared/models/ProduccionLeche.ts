@@ -1,9 +1,7 @@
 
 export class Produccion{
-
-  idProduccion:number;
   idUsuario:number;
-  fechaProduccion:Date;
+  fechaProduccion:string;
   totalProduccion:number;
   totalConsumidoCasa:number;
   totalConsumidoCrias:number;

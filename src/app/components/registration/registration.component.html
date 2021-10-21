@@ -7,62 +7,63 @@
                 <h1 for="" class="descripcion">Ingresa tus Datos para registrarte</h1>
             </div>
             <div class="form-group">
-                <label for="email">Ingresa tu nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ejemplo: Juan Mario">
+                <label>Ingresa tu nombre</label>
+                <input type="text" class="form-control" #nombre id="nombre">
             </div>
             <div class="form-group">
-                <label for="email">Ingresa tu Apellido</label>
-                <input type="text" class="form-control" id="apellido" aria-describedby="emailHelp" placeholder="Ejemplo: Rueda Rivera">
+                <label>Ingresa tu Apellido</label>
+                <input type="text" class="form-control" #apellido id="apellido">
+            </div>
+            <div class="form-group">
+                <label for="email">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" #fecha id="fechaNacimiento">
+            </div>
+            <div class="form-group">
+                <label class="sexo">Sexo</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" value="M" #sexoM>
+                    <label class="form-check-label">Hombre</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" value="F" #sexoF>
+                    <label class="form-check-label">Mujer</label>
+                </div>
             </div>
             <div class="form-group">
                 <label for="email">Ingresa tu correo</label>
-                <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com">
+                <input type="email" class="form-control" id="correo" #correo>
             </div>
             <div class="form-group">
                 <label for="password">Ingresa tu contraseña</label>
-                <input type="password" class="form-control" id="contraseña" placeholder="********">
+                <input type="password" class="form-control" id="contraseña" #contrasena>
             </div>
             <div class="form-group">
                 <label for="password">Repite tu contraseña</label>
-                <input type="password" class="form-control password" id="contraseña2" placeholder="********">
+                <input type="password" class="form-control password" id="contraseña2" #contra2>
             </div>
             <div class="form-group">
-                <label for="password">Elije tu pais</label>
-                <select class="form-select" id="pais">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <label>Elije tu pais</label>
+                <select class="form-select" id="pais" #pais>
+                  <option>--Selecciona tu pais--</option>
+                  <option value="{{pais.idPais}}" *ngFor="let pais of paises">{{pais.nombrePais}}</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="password">Ingresa tu numero</label>
-                <div class="numeroTel">
-                    <select class="form-select num-pais" id="codigoPais">
-                    <option selected>+(###)</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                    <input type="number" class="form-control" id="numeroTel" placeholder="12345">
-
-                </div>
+                <label>Ingresa tu numero</label>
+                <input type="number" class="form-control" id="numeroTel" #numero>
             </div>
             <div class="form-group">
                 <div class="form-check form-switch">
                     <label class="form-check-label" for="flexSwitchCheckDefault">Es propietario de una finca</label>
-                    <input class="form-check-input" type="checkbox" id="propietario" #propietario>
+                    <input class="form-check-input" name="SI" type="checkbox" id="propietario" #propietario>
                 </div>
             </div>
-            <div *ngIf="propietario" class="form-group">
+            <div class="form-group">
                 <label for="password">Ingrese nombre de finca</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ejemplo: Las margaritas">
+                <input type="text" class="form-control" #finca>
             </div>
             <div class="row">
-                <button onclick="imprimirValores()" class=" col btn-1 btn btn-primary">Registrarse</button>
+                <button (click)="registrarse(nombre.value,apellido.value,fecha.value,sexoM.checked ,sexoF.checked ,correo.value,contrasena.value,contra2.value,pais.value,numero.value,propietario.checked ,finca.value)" class=" col btn-1 btn btn-primary">Registrarse</button>
                 <button (click)=' routerLogin()' class="col btn-2 btn btn-primary">Iniciar Sesion</button>
             </div>
         </form>

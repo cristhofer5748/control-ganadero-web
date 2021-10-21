@@ -3,6 +3,7 @@ import { HojaVida } from './HojaVida';
 import { ReporteInventario } from './ReporteInventario';
 import { ReporteProduccion } from './ReporteProduccion';
 import { Paises } from './Paises';
+import { Usuario } from './Usuarios';
 export class Respuesta{
   state:number;
   data:any;
@@ -36,6 +37,12 @@ export class RespuestaReporteInventario{
 export class RespuestaPaises{
   state:number;
   data:Paises[];
+  message:string;
+}
+
+export class RespuestaUsuarios{
+  state:number;
+  data:Usuario[];
   message:string;
 }
 

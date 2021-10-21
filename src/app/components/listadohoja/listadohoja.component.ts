@@ -39,13 +39,16 @@ usuario:Usuario
 
     ( this.http.getListCow(this.usuario.idUsuario)).subscribe(data => {
       console.log(data)
-      if(data==null){
+      if(data.state==200){
+        this.ganado=data.data
+        this.resultsLength = data.data.length
+        this.dataSource = new MatTableDataSource(this.ganado);
+        this.isLoadingResults=false
+      }else{
         this.ganado=[]
+        this.isLoadingResults=false
       }
-      this.ganado=data.data
-      this.resultsLength = data.data.length
-      this.dataSource = new MatTableDataSource(this.ganado);
-      this.isLoadingResults=false
+
     });
     console.log(this.ganado)
 

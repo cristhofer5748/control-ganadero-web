@@ -7,7 +7,7 @@ import { RestService } from '../../shared/services/rests.service';
 import { Usuario } from '../../shared/models/Usuarios';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-list-cow',
   templateUrl: './list-cow.component.html',
@@ -17,7 +17,7 @@ export class ListCowComponent implements OnInit {
 
   ganado: Animal[] = [];
 
-displayedColumns: string[] = [ 'fotoAnimal','nombreAnimal', 'numAnimal'];
+displayedColumns: string[] = [ 'fotoAnimal','nombreAnimal', 'numAnimal','opciones'];
 dataSource: MatTableDataSource<Animal>;
 search
 resultsLength = 0;
@@ -76,6 +76,38 @@ usuario:Usuario
 
   navegar(id){
     this.router.navigate([`vaca/${id}`])
+  }
+
+  editar(idAnimal:number){
+    this.router.navigate([`vaca/${idAnimal}/editar`])
+  }
+
+  async eliminar(idAnimal:number){
+    const { value: accept } = await Swal.fire({
+      title: 'Eliminar Animal',
+      input: 'checkbox',
+      icon:'warning',
+      inputValue: 0,
+      inputPlaceholder:'Dese eliminar el animal ',
+      confirmButtonText: 'Continue',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar'
+
+    })
+    if(accept==1){
+  this.http.eliminarAnimal(idAnimal).subscribe(result=>{
+    if(result.state==200){
+      Swal.fire({
+        title: 'Animal Eliminado',
+        text: 'El animal fue eliminado correctamente',
+        icon:'success',
+        confirmButtonText: 'Aceptar'
+      })
+      location.reload()
+    }
+  })
+    }
+
   }
 
 }

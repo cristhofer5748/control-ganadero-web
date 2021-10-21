@@ -1,0 +1,84 @@
+<app-header></app-header>
+<div class="contenedor-login">
+    <label for="fichero" class="circle"><img *ngIf="img" [src]="img" class="" alt="...">
+    <img *ngIf="!img" src="/assets/img/fotoanimal.png" class="" alt="..."></label>
+    <div class="inputs">
+        <div class="form-group">
+            <label>Nombre del Animal</label>
+            <input type="text" class="form-control" #fechaMonta>
+        </div>
+        <div class="form-group">
+            <label>Numero del animal</label>
+            <input type="number" class="form-control" #fechaMonta>
+        </div>
+
+    </div>
+    <input id="fichero" (change)="capturarFile($event)" accept="image/*" type="file">
+
+
+    <div class="login">
+        <form class="container">
+            <div class="form-group">
+                <label>Fecha de Nacimiento</label>
+                <input type="date" class="form-control" #fechaInseminacion>
+            </div>
+            <div class="form-group">
+                <label>Raza de Animal </label>
+                <input type="text" class="form-control" #Raza>
+            </div>
+            <div class="form-group">
+                <label>Peso de animal </label>
+                <input type="text" class="form-control" #Raza>
+            </div>
+            <div class="form-group">
+                <label for="password">Elija Procedecia</label>
+                <select class="form-select" id="codigoPais">
+                <option selected>--Seleccione una Opcion--</option>
+                <option>Criollo</option>
+                <option>Comprado</option>
+              </select>
+            </div>
+            <div class="form-group selectores">
+
+                <div class=sel>
+                    <label class="form-check-label" for="inlineRadio1">Sexo Cria</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkbox" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="" for="inlineRadio1">Macho</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input checkbox" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="" for="inlineRadio2">Hembra</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Numero del papa</label>
+                <input type="number" class="form-control" #Raza>
+            </div>
+            <div class="form-group">
+                <label>Numero de Mama </label>
+                <input type="number" class="form-control" #Raza>
+            </div>
+            <div class="form-group">
+                <div class="form-check form-switch">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">En produccion</label>
+                    <input class="form-check-input  label-switch" type="checkbox" id="propietario" #propietario>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Nivel de desarrollo</label>
+                <select class="form-select" id="codigoPais">
+              <option selected>--Seleccione una Opcion--</option>
+              <option>Adulto</option>
+              <option>Novilla</option>
+              <option>Ternero</option>
+            </select>
+            </div>
+            <div class="row">
+                <button (click)="guardar()" class=" col btn-1 btn btn-primary">Actualizar</button>
+                <button (click)="cancelar()" class="col btn-2 btn btn-primary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

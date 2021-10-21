@@ -16,6 +16,7 @@ import { RegistrationMilkComponent } from './components/registration-milk/regist
 import { ListadohojaComponent } from './components/listadohoja/listadohoja.component';
 import { NewCowComponent } from './components/new-cow/new-cow.component';
 import { CurriculumCowComponent } from './components/curriculum-cow/curriculum-cow.component';
+import { EditarAnimalComponent } from './components/editar-animal/editar-animal.component';
 
 const routes: Routes = [
   {path:'publicidad',component:PublicityComponent},
@@ -24,16 +25,16 @@ const routes: Routes = [
   {path:'main',component:MainComponent,canActivate:[MainGuard]},
   {path:'ganado',component:GeneralMenuComponent,canActivate:[MainGuard]},
   {path:'ganado/listado',component:ListCowComponent,canActivate:[MainGuard]},
+  {path:'ganado/listado',component:ListCowComponent,canActivate:[MainGuard]},
   {path:'ganado/registrar',component:NewCowComponent,canActivate:[MainGuard]},
   {path:'ganado/listado/hoja',component:ListadohojaComponent,canActivate:[MainGuard]},
-  {path:'ganado/listado/hoja/:id',component:CurriculumCowComponent,canActivate:[MainGuard]},
+  {path: 'vaca/:id/editar',component:EditarAnimalComponent,canActivate:[MainGuard]},
   {path: 'vaca/:id', component: CowMenuComponent,canActivate:[MainGuard]},
   {path: 'vaca/:id/inseminacion', component: InseminationComponent,canActivate:[MainGuard]},
   {path: 'vaca/:id/control-salud', component: HealthCheckComponent,canActivate:[MainGuard]},
   {path: 'vaca/:id/natalidad', component: NatalityComponent,canActivate:[MainGuard]},
   {path: 'produccion',component:MainMilkComponent,canActivate:[MainGuard]},
   {path: 'produccion/registro',component:RegistrationMilkComponent,canActivate:[MainGuard]},
-
   {path:'**',pathMatch:'full',redirectTo:'publicidad'}
 ];
 

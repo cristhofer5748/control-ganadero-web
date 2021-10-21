@@ -3,68 +3,67 @@
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
 </div>
 
-<div class="menu">
-
+<div class="menu" *ngIf="!isLoadingResults">
     <ul class="list-group ">
         <li class="list-group-item active" aria-current="true">
-            <label class="title">Produccion De Leche</label>
+            <label class="title">Produccion de Leche</label>
             <label class="description">Puede variar entre rango de fechas</label>
         </li>
         <li class="list-group-item ">
-            <div class="input-group" *ngIf="!isLoadingResults">
+            <div class="input-group">
                 <div class="form-outline">
                     <input #initDate type="date" placeholder="Fecha Inicial" class="textbox-n" type="text" onClick="(this.type='date')" class="form-control" />
                     <input #endDate type="date" placeholder="Fecha Final" class="textbox-n" type="text" onClick="(this.type='date')" class="form-control" />
                 </div>
-                <button type="button" class="btn btn-primary">Buscar</button>
+                <button (click)="generarReporte(initDate.value,endDate.value)" type="button" class="btn btn-primary">Buscar</button>
             </div>
         </li>
         <li class="list-group-item grupo">
             <label for="" class="titleData">Total del Dia: </label>
             <div class="label">
-                <Label class="data">0</Label>
+                <Label class="data">{{reporte.totalDiario}}</Label>
             </div>
         </li>
         <li class="list-group-item grupo">
             <label for="" class="titleData">Total de Ayer: </label>
             <div class="label">
-                <Label class="data">0</Label>
+                <Label class="data">{{reporte.totalDiaAnt}}</Label>
             </div>
         </li>
         <li class="list-group-item grupo">
             <label for="" class="titleData">Total del Mes: </label>
             <div class="label">
-                <Label class="data">0</Label>
+                <Label class="data">{{reporte.totalMes}}</Label>
             </div>
         </li>
         <li class="list-group-item grupo">
             <label for="" class="titleData">Primera quincena: </label>
             <div class="label">
-                <Label class="data">0</Label>
+                <Label class="data">{{reporte.quincena}}</Label>
             </div>
         </li>
         <li class="list-group-item grupo">
             <label for="" class="titleData">Consumo de Casa</label>
             <div class="label">
-                <Label class="data">0</Label>
+                <Label class="data">{{reporte.consuCasa}}</Label>
             </div>
         </li>
         <li class="list-group-item grupo">
             <label for="" class="titleData">Consumo Terneros</label>
             <div class="label">
-                <Label class="data">0</Label>
+                <Label class="data">{{reporte.consuTernero}}</Label>
             </div>
         </li>
         <li class="list-group-item grupo">
             <label for="" class="titleData">En ordeño</label>
             <div class="label">
-                <Label class="data">0</Label>
+                <Label class="data">{{reporte.enProduccion}}</Label>
             </div>
         </li>
         <li class="list-group-item grupo">
             <label for="" class="titleData">Promedio Diario</label>
             <div class="label">
-                <Label class="data">0</Label>
+                <Label class="data">{{reporte.promedio}}</Label>
             </div>
         </li>
 
