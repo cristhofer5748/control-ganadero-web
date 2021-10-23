@@ -11,7 +11,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class MainComponent implements OnInit {
   isLoadingResults:boolean=false
-  reporteInventario:ReporteInventario
+  reporteInventario:ReporteInventario= new ReporteInventario()
   usuario:Usuario
   constructor(private elementRef: ElementRef,private http:RestService,private jwt:JwtHelperService) { }
 

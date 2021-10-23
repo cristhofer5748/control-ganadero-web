@@ -22,7 +22,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
-
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import  pdfFonts from "pdfmake/build/vfs_fonts";
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
@@ -36,6 +37,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ListadohojaComponent } from './components/listadohoja/listadohoja.component';
 import { DialogImgComponent } from './components/curriculum-cow/dialog-img/dialog-img.component';
 import { EditarAnimalComponent } from './components/editar-animal/editar-animal.component'
+
+PdfMakeWrapper.setFonts(pdfFonts)
 @NgModule({
   declarations: [
     AppComponent,

@@ -18,7 +18,7 @@ export class RespuestaAnimales{
 
 export class RespuestaHojaVida{
   state:number;
-  data:HojaVida[];
+  data:HojaVida;
   message:string;
 }
 

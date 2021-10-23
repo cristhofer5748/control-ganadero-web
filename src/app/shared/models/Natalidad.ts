@@ -1,9 +1,20 @@
 export class Natalidad{
   idNatalidad:number;
   idAnimal:number;
-  fechaPalpacion:Date;
-  fechaPremies:Date;
+  fechaPalpacion:string;
+  fechaPremies:string;
   numeroParto:string;
-  fechaAproximadaNacimiento:Date;
+  fechaAproximadaNacimiento:string;
+  produccionDiaria:number;
+}
+
+
+export class RegistroNatalidad{
+
+  idAnimal:number;
+  fechaPalpacion:string;
+  fechaPremies:string;
+  numeroParto:string;
+  fechaAproximadaNacimiento:string;
   produccionDiaria:number;
 }

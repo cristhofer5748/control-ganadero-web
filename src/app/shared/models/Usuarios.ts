@@ -7,7 +7,7 @@ export class Usuario{
   apellido:string;
   correo :string;
   contraseña :string;
-  telefono :number;
+  numeroTelefono :number;
   tieneFinca : boolean;
   nombreFinca:string;
   fechaNacimiento: string;

@@ -1,15 +1,22 @@
 <app-header></app-header>
-
+<div class="example-loading-shade" *ngIf="isLoadingResults ">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
 <div class="contenedor-login">
     <div class="encabezado-login ">
         <p for="" class="title">CONTROL DE SALUD</p>
         <!-- <h1 for="" class="descripcion">Ingresa los datos correspondientes</h1> -->
     </div>
-    <figure class="figure">
-        <img src="/assets/img/menunata.png" class="figure-img" alt="...">
-        <figcaption class="figure-caption text-end"> Nombre y Numero de Vaca</figcaption>
-    </figure>
-
+    <div class="encabezado">
+        <div class="animal">
+            <img *ngIf="animal.fotoAnimal" [src]="animal.fotoAnimal" class="img-animal" alt="...">
+            <img *ngIf="!animal.fotoAnimal" src="/assets/img/vaca-negra.png" class="img-animal" alt="...">
+        </div>
+        <div class="datosanimal">
+            <label for="">Nombre:<p>{{animal.nombreAnimal}}</p> </label>
+            <label for="">Numero:&nbsp; &nbsp;<p>{{animal.numAnimal}}</p> </label>
+        </div>
+    </div>
 
     <div class="login">
         <form class="container">
@@ -17,14 +24,14 @@
                 <div class="pruebas">
                     <div class="etiqueta">
                         <label>Prueba de Tuberculosis </label>
-                        <input type="date" class="form-control" #fechaPalpa>
+                        <input type="date" class="form-control" #fechaTuber>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" #tubP>
                         <label class="form-check-label" for="inlineRadio1">Positivo</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
+                    <div class="form-check form-check-inline" #form>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" #tubN>
                         <label class="form-check-label" for="inlineRadio2">Negativo</label>
                     </div>
                 </div>
@@ -33,14 +40,14 @@
                 <div class="pruebas">
                     <div class="etiqueta">
                         <label>Prueba de Brucelosis </label>
-                        <input type="date" class="form-control" #fechaPalpa>
+                        <input type="date" class="form-control" #fechaBru>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" #bruP>
                         <label class="form-check-label" for="inlineRadio1">Positivo</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" #bruN>
                         <label class="form-check-label" for="inlineRadio2">Negativo</label>
                     </div>
                 </div>
@@ -49,14 +56,14 @@
                 <div class="pruebas">
                     <div class="etiqueta">
                         <label>Prueba de Mastitis </label>
-                        <input type="date" class="form-control" #fechaPalpa>
+                        <input type="date" class="form-control" #fechaMas>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" #masP>
                         <label class="form-check-label" for="inlineRadio1">Positivo</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" #masN>
                         <label class="form-check-label" for="inlineRadio2">Negativo</label>
                     </div>
                 </div>
@@ -69,15 +76,15 @@
 
                         <div class="ubre">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="checkbox" id="inlineRadio1" #tetaA>
                                 <label class="form-check-label" for="inlineRadio1">A</label>
-                                <input class="form-check-input" type="radio" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="checkbox" id="inlineRadio1" #tetaB>
                                 <label class="form-check-label" for="inlineRadio1">C</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="inlineRadio2" value="option2">
+                                <input class="form-check-input" type="checkbox" id="inlineRadio2" #tetaC>
                                 <label class="form-check-label" for="inlineRadio2">B</label>
-                                <input class="form-check-input" type="radio" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="checkbox" id="inlineRadio2" #tetaD>
                                 <label class="form-check-label" for="inlineRadio1">D</label>
                             </div>
                         </div>
@@ -85,14 +92,14 @@
 
                     <div class="etiqueta-tratamiento">
                         <label for="exampleFormControlTextarea1" class="form-label">Tratamientos</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #tartamiento></textarea>
                     </div>
                 </div>
             </div>
 
 
             <div class="row">
-                <button (click)="guardar()" class=" col btn-1 btn btn-primary">Guardar</button>
+                <button (click)="guardar(fechaTuber.value,tubP.checked,tubN.checked,fechaBru.value,bruP.checked,bruN.checked,fechaMas.value,masP.checked,masN.checked,tetaA.checked,tetaB.checked,tetaC.checked,tetaD.checked,tartamiento.value)" class=" col btn-1 btn btn-primary">Guardar</button>
                 <button (click)="cancelar()" class="col btn-2 btn btn-primary">Cancelar</button>
             </div>
         </form>

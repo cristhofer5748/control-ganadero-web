@@ -1,14 +1,22 @@
 <app-header></app-header>
+<div class="example-loading-shade" *ngIf="isLoadingResults ">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
 <div class="contenedor-login">
     <div class="encabezado-login ">
         <p for="" class="title">NATALIDAD</p>
         <!-- <h1 for="" class="descripcion">Ingresa los datos correspondientes</h1> -->
     </div>
-    <figure class="figure">
-        <img src="/assets/img/menunata.png" class="figure-img" alt="...">
-        <figcaption class="figure-caption text-end"> Nombre y Numero de Vaca</figcaption>
-    </figure>
-
+    <div class="encabezado">
+        <div class="animal">
+            <img *ngIf="animal.fotoAnimal" [src]="animal.fotoAnimal" class="img-animal" alt="...">
+            <img *ngIf="!animal.fotoAnimal" src="/assets/img/vaca-negra.png" class="img-animal" alt="...">
+        </div>
+        <div class="datosanimal">
+            <label for="">Nombre:<p>{{animal.nombreAnimal}}</p> </label>
+            <label for="">Numero:&nbsp; &nbsp;<p>{{animal.numAnimal}}</p> </label>
+        </div>
+    </div>
 
     <div class="login">
         <form class="container">
@@ -26,11 +34,11 @@
             </div>
             <div class="form-group">
                 <label>Numero de Parto</label>
-                <input type="text" class="form-control" #Parto>
+                <input type="number" class="form-control" #Parto>
             </div>
             <div class="form-group">
                 <label>Produccion Lechera</label>
-                <input type="text" class="form-control" #ProduccionLechera>
+                <input type="number" class="form-control" #ProduccionLechera>
             </div>
             <div class="row">
                 <button (click)="guardar(fechaPalpa.value,fechaPremies.value,fechaPremies.value,Parto.value,ProduccionLechera.value)" class=" col btn-1 btn btn-primary">Guardar</button>

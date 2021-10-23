@@ -15,3 +15,89 @@ h1 {
     font-weight: bold;
     margin: 0%;
 }
+
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0px;
+    border: none;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+
+.navbar-horizontal {
+    background-color: #005fa6;
+}
+
+.collapse-nav {
+    width: 100%;
+}
+
+.collapse-nav .logo {
+    position: absolute;
+    bottom: -5px;
+    right: 5%;
+}
+
+.collapse-nav .title {
+    color: white;
+    font-weight: bolder;
+    font-size: 35px;
+    font-family: raleway_semibold;
+    ;
+}
+
+.collapse-nav .menu-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.collapse-nav .header-col-1 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.collapse-nav .header-col-2 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.collapse-nav .header-col-3 {
+    padding-bottom: 5%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 500;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #005fa6;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.sidenav a:hover {
+    color: white;
+    background-color: #64AC3F;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}

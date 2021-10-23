@@ -1,6 +1,11 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
+import { ActualizarAnimal, Animal } from '../../shared/models/animaRegister';
+import { RestService } from '../../shared/services/rests.service';
+import { Usuario } from '../../shared/models/Usuarios';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-editar-animal',
@@ -9,9 +14,28 @@ import { Router } from '@angular/router';
 })
 export class EditarAnimalComponent implements OnInit {
   public archivos:any[] = []
-  constructor(private elementRef: ElementRef,private sanitizer:DomSanitizer,private router:Router) { }
+  constructor(private elementRef: ElementRef,private sanitizer:DomSanitizer,private router:Router,private actRouter:ActivatedRoute,
+              private http:RestService,private jwt:JwtHelperService) { }
   img: string
+  idAnimal:number
+  animal:Animal
+  usuario:Usuario
+  isLoadingResults:boolean=false
   ngOnInit(): void {
+
+    this.isLoadingResults=true
+    let token = localStorage.getItem('token')
+    this.usuario =this.jwt.decodeToken(token)
+
+    this.idAnimal = this.actRouter.snapshot.params.id
+    this.http.getCow(this.idAnimal).subscribe(result=>{
+      if(result.state==200){
+        this.animal=result.data[0]
+        this.img= this.animal.fotoAnimal
+        console.log(this.animal)
+      }
+      this.isLoadingResults=false
+    })
   }
   ngAfterViewInit(){
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#64AC3F';
@@ -47,8 +71,48 @@ export class EditarAnimalComponent implements OnInit {
  })
 
 
- guardar(){
-   this.router.navigate(['ganado/listado'])
+ guardar(nombre:string,numero:number,fechaNaci:string,raza:string,peso:number,procedencia:string,numPapa:number,numMama:number,produccion:boolean,desarrollo:string){
+  this.isLoadingResults=true
+  let newAnimal:ActualizarAnimal={
+      idAnimal: +this.idAnimal,
+      idUsuario: this.usuario.idUsuario,
+      pesoAnimal:peso,
+      numPadre:numPapa,
+      numMadre:numMama,
+      fotoAnimal: this.img,
+      numAnimal:numero,
+      nombreAnimal:nombre,
+      fechaNacimiento: fechaNaci,
+      origen:procedencia,
+      razaAnimal: raza,
+      enproduccion: produccion,
+      etapaVida: desarrollo
+    }
+
+
+  this.http.updateAnimal(newAnimal).subscribe(result=>{
+    if(result.state==200){
+      this.isLoadingResults=false
+        Swal.fire({
+          title:'Actualizacion de Animal',
+          text: 'El animal fue actualizado Correctamente',
+          icon:'success',
+          confirmButtonText: 'Aceptar'
+        })
+        this.router.navigate(['ganado/listado'])
+    }else{
+      this.isLoadingResults=false
+      Swal.fire({
+        title:'Actualizacion de Animal',
+        text: 'El animal no se pudo actualizar intente de nuevo',
+        icon:'error',
+        confirmButtonText: 'Aceptar'
+      })
+      location.reload()
+    }
+  })
+
+
  }
 
  cancelar(){

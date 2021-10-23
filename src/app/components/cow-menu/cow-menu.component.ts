@@ -21,19 +21,16 @@ export class CowMenuComponent implements OnInit {
    ngOnInit(): void {
     this.isLoadingResults = true;
     this.idAnimal = this.activateRouter.snapshot.params.id
-    this.http.getCow(this.idAnimal).then(data=>{
-      data.subscribe(result=>{
+    this.http.getCow(this.idAnimal).subscribe(data=>{
 
-        if(data==null || result.state!=200){
+        if(data.state!=200){
           this.cow=new Animal
         }else{
-          this.cow= result.data[0]
+          this.cow= data.data[0]
         }
         this.isLoadingResults = false;
-        this.img=result.data[0].fotoAnimal
+        this.img=data.data[0].fotoAnimal
       })
-    })
-
   }
 
   imagen(){

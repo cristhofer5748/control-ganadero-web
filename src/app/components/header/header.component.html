@@ -1,6 +1,6 @@
 <nav class="navbar ">
     <div class="container-fluid">
-        <div class="menu">
+        <div class="menu" appClickOutside (clickOutside)="clickOutsideMenu($event)" (click)="openNav()">
             <div class="hamburgueza"></div>
             <div class="hamburgueza"></div>
             <div class="hamburgueza"></div>
@@ -12,3 +12,10 @@
 
     </div>
 </nav>
+
+<div id="mySidenav" class="sidenav" appClickOutside (clickOutside)="clickOutsideSide($event)">
+    <a href="/main"><img style="width: 20px;" src="/assets/img/granja.png" alt=""> Finca</a>
+    <a><img style="width: 20px;" src="/assets/img/usuario.png" alt=""> Perfil </a>
+    <a href="/ganado"><img style="width: 20px;" src="/assets/img/vaca-negra.png" alt=""> Control Ganadero</a>
+    <a (click)="logout()"> <img style="width: 20px;" src="/assets/img/sesion.png" alt=""> Cerrar Sesión</a>
+</div>

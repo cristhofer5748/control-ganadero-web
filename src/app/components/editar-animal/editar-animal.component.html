@@ -1,17 +1,19 @@
 <app-header></app-header>
-<div class="contenedor-login">
+<div class="example-loading-shade" *ngIf="isLoadingResults ">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
+<div class="contenedor-login" *ngIf="!isLoadingResults">
     <label for="fichero" class="circle"><img *ngIf="img" [src]="img" class="" alt="...">
     <img *ngIf="!img" src="/assets/img/fotoanimal.png" class="" alt="..."></label>
     <div class="inputs">
         <div class="form-group">
             <label>Nombre del Animal</label>
-            <input type="text" class="form-control" #fechaMonta>
+            <input type="text" class="form-control" [value]="animal.nombreAnimal" #nombre>
         </div>
         <div class="form-group">
             <label>Numero del animal</label>
-            <input type="number" class="form-control" #fechaMonta>
+            <input type="number" class="form-control" [value]="animal.numAnimal" #numero>
         </div>
-
     </div>
     <input id="fichero" (change)="capturarFile($event)" accept="image/*" type="file">
 
@@ -20,63 +22,49 @@
         <form class="container">
             <div class="form-group">
                 <label>Fecha de Nacimiento</label>
-                <input type="date" class="form-control" #fechaInseminacion>
+                <input type="date" class="form-control" [value]="animal.fechaNacimiento | date: 'yyyy-MM-dd' " #fecha>
             </div>
             <div class="form-group">
                 <label>Raza de Animal </label>
-                <input type="text" class="form-control" #Raza>
+                <input type="text" class="form-control" [value]="animal.razaAnimal" #raza>
             </div>
             <div class="form-group">
                 <label>Peso de animal </label>
-                <input type="text" class="form-control" #Raza>
+                <input type="text" class="form-control" [value]="animal.pesoAnimal" #peso>
             </div>
             <div class="form-group">
                 <label for="password">Elija Procedecia</label>
-                <select class="form-select" id="codigoPais">
-                <option selected>--Seleccione una Opcion--</option>
-                <option>Criollo</option>
-                <option>Comprado</option>
+                <select #procedencia class="form-select" id="codigoPais">
+                <option selected [value]="animal.origen">{{animal.origen}}</option>
+                <option value="CRIOLLO" >Criollo</option>
+                <option value="COMPRADO">Comprado</option>
               </select>
-            </div>
-            <div class="form-group selectores">
-
-                <div class=sel>
-                    <label class="form-check-label" for="inlineRadio1">Sexo Cria</label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input checkbox" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="" for="inlineRadio1">Macho</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input checkbox" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <label class="" for="inlineRadio2">Hembra</label>
-                    </div>
-                </div>
             </div>
             <div class="form-group">
                 <label>Numero del papa</label>
-                <input type="number" class="form-control" #Raza>
+                <input type="number" class="form-control" [value]="animal.numPadre" #numPapa>
             </div>
             <div class="form-group">
                 <label>Numero de Mama </label>
-                <input type="number" class="form-control" #Raza>
+                <input type="number" class="form-control" [value]="animal.numMadre" #numMama>
             </div>
             <div class="form-group">
                 <div class="form-check form-switch">
                     <label class="form-check-label" for="flexSwitchCheckDefault">En produccion</label>
-                    <input class="form-check-input  label-switch" type="checkbox" id="propietario" #propietario>
+                    <input [checked]="animal.enproduccion" class="form-check-input  label-switch" type="checkbox" id="propietario" #produccion>
                 </div>
             </div>
             <div class="form-group">
                 <label for="password">Nivel de desarrollo</label>
-                <select class="form-select" id="codigoPais">
-              <option selected>--Seleccione una Opcion--</option>
-              <option>Adulto</option>
-              <option>Novilla</option>
-              <option>Ternero</option>
+                <select #desarrollo class="form-select" id="codigoPais">
+            <option selected [value]="animal.etapaVida">{{animal.etapaVida}}</option>
+              <option value="ADULTO">Adulto</option>
+              <option value="NOVILLA">Novilla</option>
+              <option value="TERNERO">Ternero</option>
             </select>
             </div>
             <div class="row">
-                <button (click)="guardar()" class=" col btn-1 btn btn-primary">Actualizar</button>
+                <button (click)="guardar(nombre.value,numero.value,fecha.value,raza.value,peso.value,procedencia.value,numPapa.value,numMama.value,produccion.checked,desarrollo.value)" class=" col btn-1 btn btn-primary">Actualizar</button>
                 <button (click)="cancelar()" class="col btn-2 btn btn-primary">Cancelar</button>
             </div>
         </form>
