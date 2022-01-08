@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../shared/models/Usuarios';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { Produccion } from '../../shared/models/ProduccionLeche';
 
 @Component({
   selector: 'app-header',
@@ -63,4 +64,15 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['publicidad'])
   }
 
+  ganado(){
+    this.router.navigate(['ganado'])
+  }
+
+  main(){
+    this.router.navigate(['main'])
+  }
+
+  Produccion(){
+    this.router.navigate(['produccion'])
+  }
 }

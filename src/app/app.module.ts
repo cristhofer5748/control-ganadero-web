@@ -36,7 +36,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ListadohojaComponent } from './components/listadohoja/listadohoja.component';
 import { DialogImgComponent } from './components/curriculum-cow/dialog-img/dialog-img.component';
-import { EditarAnimalComponent } from './components/editar-animal/editar-animal.component'
+import { EditarAnimalComponent } from './components/editar-animal/editar-animal.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 PdfMakeWrapper.setFonts(pdfFonts)
 @NgModule({
@@ -73,7 +75,13 @@ PdfMakeWrapper.setFonts(pdfFonts)
     MatFormFieldModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     {provide: JWT_OPTIONS,useValue:JWT_OPTIONS},

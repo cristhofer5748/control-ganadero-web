@@ -38,15 +38,17 @@ usuario:Usuario
     console.log(this.usuario.idUsuario)
     this.isLoadingResults = true;
 
-    ( this.http.getListCow(this.usuario.idUsuario)).subscribe(data => {
+    this.http.getListCow(this.usuario.idUsuario).subscribe(data => {
       console.log(data)
-      if(data==null){
-        this.ganado=[]
-      }
+      if(data.state==200){
       this.ganado=data.data
       this.resultsLength = data.data.length
       this.dataSource = new MatTableDataSource(this.ganado);
       this.isLoadingResults=false
+      }else{
+        this.ganado=[]
+        this.isLoadingResults=false
+      }
     });
     console.log(this.ganado)
 
@@ -103,7 +105,7 @@ usuario:Usuario
         icon:'success',
         confirmButtonText: 'Aceptar'
       })
-      location.reload()
+
     }
   })
     }

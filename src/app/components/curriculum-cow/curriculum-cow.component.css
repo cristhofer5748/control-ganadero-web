@@ -8,6 +8,10 @@ table {
     border-radius: 50%
 }
 
+.contenedor-data {
+    background-color: #64AC3F;
+}
+
 .example-loading-shade {
     position: absolute;
     top: 0;

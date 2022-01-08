@@ -125,7 +125,7 @@ this.isLoadingResults= true
     jsPDF: {orientacion: 'landscape'}
   }
 
-  const content:Element = document.getElementById('body')
+  const content:Element = document.getElementById('contenedor')
  this.pdf(content,options)
 }
 

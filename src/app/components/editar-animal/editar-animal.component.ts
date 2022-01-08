@@ -88,9 +88,10 @@ export class EditarAnimalComponent implements OnInit {
       enproduccion: produccion,
       etapaVida: desarrollo
     }
-
+console.log(newAnimal)
 
   this.http.updateAnimal(newAnimal).subscribe(result=>{
+
     if(result.state==200){
       this.isLoadingResults=false
         Swal.fire({

@@ -12,16 +12,16 @@
                 <h1 for="" class="descripcion">Ingrese los datos correspondientes</h1>
             </div>
             <div class="form-group">
-                <label for="email">Total de Produccion</label>
-                <input type="number" class="form-control" id="correo" #produccion>
+                <label>Total de Produccion</label>
+                <input type="number" class="form-control" #produccion>
             </div>
             <div class="form-group">
-                <label for="email">Consumo en Casa</label>
-                <input type="number" class="form-control" id="correo" #consumoCasa>
+                <label>Consumo en Casa</label>
+                <input type="number" class="form-control" #consumoCasa>
             </div>
             <div class="form-group">
-                <label for="password">Consumo Ternero</label>
-                <input type="number" class="form-control" id="contrasena" #consumoTernero>
+                <label>Consumo Ternero</label>
+                <input type="number" class="form-control" #consumoTernero>
             </div>
             <div class="row">
                 <button (click)="guardarRegistro(produccion.value,consumoCasa.value,consumoTernero.value)" class="col btn-1 btn btn-primary">Guardar</button>
